@@ -13,6 +13,10 @@ using System.Web.Mvc;
 
 namespace LS_DapperMvcCode.Controllers
 {
+    /// <summary>
+    /// Dapper
+    /// 表单提交
+    /// </summary>
     public class DeveloperController : Controller
     {
         string LS_DataUrl = ConfigurationManager.ConnectionStrings["LS_DataUrl"].ConnectionString;
