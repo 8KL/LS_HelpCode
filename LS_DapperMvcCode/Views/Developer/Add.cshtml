@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+@model StudentModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加页面</title>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <style type="text/css">
+        table {
+            width: 80%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Developer/Add" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <td>姓名:</td>
+                <td><input type="text" name="Name" /></td>
+            </tr>
+            <tr>
+                <td>年龄:</td>
+                <td><input type="text" name="Age" /></td>
+            </tr>
+            <tr>
+                <td>性别:</td>
+                <td><input type="text" name="Gender" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit" />提交</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

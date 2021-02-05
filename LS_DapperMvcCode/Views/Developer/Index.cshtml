@@ -1,0 +1,113 @@
+﻿
+@{
+    Layout = null;
+}
+@using LS_DapperMvcCode.Models;
+@model List<StudentModel>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>显示页面</title>
+    <style type="text/css">
+        table {
+            width: 80%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            table td, table th {
+                border: 1px solid #cad9ea;
+                color: #666;
+                height: 30px;
+            }
+
+            table thead th {
+                background-color: #CCE8EB;
+                width: 100px;
+            }
+
+            table tr:nth-child(odd) {
+                background: #fff;
+            }
+
+            table tr:nth-child(even) {
+                background: #F5FAFA;
+            }
+
+        th {
+            white-space: nowrap;
+            overflow: hidden;
+            word-break: keep-all;
+            text-overflow: ellipsis
+        }
+
+        .div {
+            margin: 10px 5px 15px 200px;
+            display: inline-block;
+            padding: .3cm.6cm;
+            background-image: linear-gradient(#ddd,#bbb);
+            border-radius: .3em;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.slim.min.js"></script>
+    <script>
+        function onclickAdd() {
+            window.location.href = "/Developer/Add";
+        }
+    </script>
+</head>
+<body>
+    <h1 style="background-color:red;text-align:center">欢迎来到林氏</h1>
+    <div>
+        <button class="div" onclick=onclickAdd()>添加</button>
+    </div>
+    <table class="table">
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>操作</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.Id</td>
+                <td style="width:45%;word-break:break-all; word-wrap:break-word;">@item.Name</td>
+                <td style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.Age</td>
+                <td style="width:45%;word-break:break-all; word-wrap:break-word;">@item.Gender</td>
+                <th><a href="/Developer/Delete?Id=@item.Id">删除</a>&nbsp;<a href="/Developer/Upd?Id=@item.Id">修改</a></th>
+            </tr>
+        }
+
+    </table>
+    <table class="table table-bordered">
+    </table>
+</body>
+</html>
+@*<tr>
+                <th>@item.Id</th>
+                <th style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.RequestBody</th>
+                <th style="width:45%;word-break:break-all; word-wrap:break-word;">@item.RequestTime</th>
+                <th style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.ResponseBody</th>
+                <th style="width:45%;word-break:break-all; word-wrap:break-word;">@item.ExMessage</th>
+                <th style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.ApiType</th>
+                <th style="width:45%;word-break:break-all; word-wrap:break-word;">@item.OrderId</th>
+                <th style=" width:45%;word-break:break-all; word-wrap:break-word;">@item.ApiState</th>
+                <th style="width:45%;word-break:break-all; word-wrap:break-word;">@item.ErrorMessage</th>
+                <th><a href="/Developer/Delete?Id=@item.Id">删除</a>&nbsp;<a href="/Developer/Upd?Id=@item.Id">修改</a></th>
+            </tr>
+        <tr>
+            <td>@item.Nmae</td>
+            <td>@item.UserName</td>
+            <th><a href="/Developer/Delete?Id=@item.UserId">删除</a>&nbsp;<a href="/Developer/Upd?Id=@item.UserId">修改</a></th>
+        </tr>
+    }*@
